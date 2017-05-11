@@ -53,6 +53,8 @@ http {
   proxy_set_header         X-Forwarded-Host $http_host;
   proxy_headers_hash_bucket_size 64;
 
+  include /etc/nginx/extra.conf;
+
   {{ $snappass_host := getenv "NGX_SNAPPASS_HOST" }}
 
   # Configuration for the server
